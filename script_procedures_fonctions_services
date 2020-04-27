@@ -1,0 +1,187 @@
+CREATE FUNCTION "DBA"."getAirline"( in abreviation char(3))
+RETURNS INTEGER
+DETERMINISTIC
+BEGIN
+	DECLARE code integer;
+    SET code = (
+                SELECT DBA.Flight.idCode from DBA.Flight join Airline
+                            where DBA.Airline.idAirline = abreviation
+                );
+       RETURN code;
+END;
+
+
+CREATE FUNCTION "DBA"."getAirportEtPays"(in abreviation char(3) ) // Reçoit en parametre l'abreviation du nom de l'aeroport
+RETURNS LONG VARCHAR
+DETERMINISTIC
+BEGIN
+	DECLARE nomPays CHAR(50); //declaration de variable
+	SET nomPays = (
+                SELECT DBA.Country.name from Country join Airports //Renvoi pays de l'aeroport
+                    where DBA.Airports.idAirport = abreviation //depend de abreviation
+            );
+	RETURN nomPays; //Retourne la réponse
+END;
+
+
+CREATE FUNCTION "DBA"."getNomAirport"( abreviation char(3))
+RETURNS LONG VARCHAR
+DETERMINISTIC
+BEGIN
+	DECLARE code char(50);
+    SET code = (
+                SELECT DBA.Airports.name from Airports
+                            where  DBA.Airports.idAirport = abreviation
+                );
+       RETURN code;
+END;
+
+
+CREATE FUNCTION "DBA"."getNomAirline"( abreviation char(3) )
+RETURNS LONG VARCHAR
+DETERMINISTIC
+BEGIN
+	DECLARE code char(50);
+    SET code = (
+                SELECT DBA.Airline.name from Airline
+                            where  DBA.Airline.idAirline = abreviation
+                );
+       RETURN code;
+END;
+
+
+CREATE PROCEDURE "DBA"."getLangues"()
+RESULT( idLangue char(2), libLangue char(30) ) // noms en sortie
+BEGIN
+// header http
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+        select idLangue, libLangue
+            from Langues
+END;
+
+
+CREATE FUNCTION "DBA"."getPath"()
+// renvoie le chemin (path) de la racine du site (où est située la base de données)
+returns long varchar
+deterministic
+BEGIN
+ declare dbPath long varchar; // chemin de la db
+ declare dbName long varchar; // nom de la db
+ --
+ set dbPath = (select db_property ('file'));        -- path + nom de la db
+ set dbName = (select db_property('name')) + '.db'; -- nom de la db
+ set dbPath = left(dbPath, length(dbPath)-length(dbName)); -- path seul
+ --
+ return dbPath; // renvoyer path
+END;
+
+
+CREATE PROCEDURE "DBA"."http_getCSS"(in url char(255))
+// renvoie le contenu de la feuille de style dont le nom (+ extension) est le paramètre url
+BEGIN
+-- 
+  call sa_set_http_header('Content-Type', 'text/css'); // header http
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || 'CSS\' || url); // renvoyer fichier css
+--
+END;
+
+
+COMMENT ON PROCEDURE "DBA"."http_getCSS" IS 'fournisseur de fichier .css (sous-répertoire CSS du site)';
+CREATE PROCEDURE "DBA"."http_getIMG"(in url char(255))
+// renvoie le contenu de l image/graphique dont le nom (+ extension) est le paramètre url
+BEGIN
+--
+  call sa_set_http_header('Content-Type', 'image/png'); // header http
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || 'IMG\' || url);  // renvoyer image
+--
+END;
+
+
+COMMENT ON PROCEDURE "DBA"."http_getIMG" IS 'fournisseur de fichier graphique (sous-répertoire IMG du site)';
+CREATE PROCEDURE "DBA"."http_getJS"(in url char(255))
+// renvoie le contenu du script js dont le nom (+ extension) est le paramètre url
+BEGIN
+-- 
+  call sa_set_http_header('Content-Type', 'application/javascript'); // header http
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || 'js\' || url);                // renvoyer fichier javascript
+--
+END;
+
+
+COMMENT ON PROCEDURE "DBA"."http_getJS" IS 'fournisseur de fichier .js (sous répertoire JS du site)';
+CREATE PROCEDURE "DBA"."http_getPage"(in url char(255))
+// renvoie le contenu de la page html dont le nom (SANS extension) est le paramètre url
+BEGIN
+--
+    call sa_set_http_header('Content-Type', 'text/html; charset=utf-8'); // header http
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || url || '.html'); // renvoyer page
+-- 
+END;
+
+
+COMMENT ON PROCEDURE "DBA"."http_getPage" IS 'fournisseur de fichier .html (racine du site)';
+CREATE PROCEDURE "DBA"."proc_TableInfo"( codeVol INTEGER ,depart char(3), destination char(3) )
+RESULT (idCode INTEGER, name char(50), deptTime char(10),arrTime char(10), deptAirport char(50), destAirport char(50))
+BEGIN
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+	select DBA.Flight.idCode, DBA.Airline.name, DBA.Flight.deptTime, DBA.Flight.arrTime, getNomAirport(depart), getNomAirport(destination)
+        from DBA.Flight join Airline on Flight.idAirline = Airline.idAirline join Airports on DBA.Flight.deptAirport = idAirport
+        where deptAirport = depart and destAirport = destination
+END;
+
+
+CREATE PROCEDURE "DBA"."proc_ToutLesVols"( )
+RESULT ( pkey INTEGER,idCode INTEGER, name char(50), deptTime char(10),arrTime char(10), deptAirport char(3), destAirport char(3))
+BEGIN
+Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+	select * from DBA.Flight
+END;
+
+
+CREATE PROCEDURE "DBA"."proc_voyageurs"( asientos integer, depart char(3), destination char(3))
+RESULT (Compagnie LONG VARCHAR)
+BEGIN
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+	select Airline.name nomAirline from Airline join DBA.Flight join Flightinfo
+        where seats > asientos and deptAirport = depart and destAirport = destination
+END;
+
+
+CREATE PROCEDURE "DBA"."proc_TableInfo"( codeVol INTEGER ,depart char(3), destination char(3) )
+RESULT (idCode INTEGER, name char(50), deptTime char(10),arrTime char(10), deptAirport char(50), destAirport char(50))
+BEGIN
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+	select DBA.Flight.idCode, DBA.Airline.name, DBA.Flight.deptTime, DBA.Flight.arrTime, getNomAirport(depart), getNomAirport(destination)
+        from DBA.Flight join Airline on Flight.idAirline = Airline.idAirline join Airports on DBA.Flight.deptAirport = idAirport
+        where deptAirport = depart and destAirport = destination
+END;
+
+
+CREATE SERVICE "TableInfo" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_TableInfo(:code,:depart,:destination);
+CREATE SERVICE "page" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getPage(:url);
+CREATE SERVICE "js" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getJS(:url);
+CREATE SERVICE "img" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getIMG(:url);
+CREATE SERVICE "getLangues" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getLangues();
+CREATE SERVICE "css" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getCSS(:url);
+COMMENT ON SERVICE "css" IS 'service fournisseur de css';
+CREATE SERVICE "compagnie" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_voyageurs(:asientos,:dept,:dest);
+CREATE SERVICE "toutLesVols" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_ToutLesVols();
+
+
+CREATE PROCEDURE "DBA"."proc_Pays"( in abreviation char(3) )
+RESULT (html long varchar)
+BEGIN
+    call sa_set_http_header('Content-Type', 'text/html;');
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+	select  string('<tr><td>', idAirport, '</td><td>' , DBA.Airports.name, '</td><td>' ,DBA.Country.name, '</td></tr>')
+        from Country join Airports
+            where Country.idPays = abreviation
+END;
+
+
+CREATE SERVICE "Pays" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_Pays(:abreviation);
+
