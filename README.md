@@ -37,7 +37,7 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 
 # Partie front-end
 1.	Une page Web (HTLM, JS, CSS) permettant d'appeler les webservices et de traiter les réponses, qui propose une interface utilisateur pour :
-o	Changer la langue de la page.
-o	Afficher les vols disponibles.
-o	Afficher les résultats des différentes requêtes. 
+*	Changer la langue de la page.
+*	Afficher les vols disponibles.
+*	Afficher les résultats des différentes requêtes. 
 
