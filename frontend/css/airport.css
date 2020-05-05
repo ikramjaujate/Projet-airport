@@ -1,0 +1,304 @@
+* {
+    outline-color: #5569ae;
+    font-family: 'Source Sans Pro', Arial, sans-serif!important;
+}
+
+body {
+    font-family: 'Source Sans Pro', Arial !important;
+    font-weight: 400;
+    line-height: 1.4 !important;
+    color: inherit !important;
+    background-size: cover;
+    background-position: center;
+}
+
+#formulaireInfoVol,
+#formulaireAeroport {
+    background-image: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    padding: 20px;
+}
+
+input#button,
+input#button2,
+input#button3,
+input#button4 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 40px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    min-width: 150px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    border-radius: 2px;
+    background-color: #222;
+    color: white;
+    transition: all 0.5s ease;
+    position: relative;
+    padding: 0;
+}
+
+input#efface,
+input#efface2,
+input#efface3,
+input#efface4 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 40px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    min-width: 150px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    border-radius: 2px;
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+[type='text'],
+[type='number'],
+[type='datetime-local'] {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 3.125rem;
+    margin: 0 0 1rem;
+    padding: .84375rem;
+    border: 1px solid #c1c1c1;
+    border-top-color: rgb(193, 193, 193);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(193, 193, 193);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(193, 193, 193);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(193, 193, 193);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="submit"] {
+    -webkit-appearance: push-button;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+
+select {
+    font-family: 'Source Sans Pro', Arial !important;
+    line-height: 1.4 !important;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+}
+
+h1#premier {
+    font-family: Times New Roman;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+h1#second,
+h1#troisieme,
+h1#quatrieme,
+h1#quinto {
+    font-family: 'Source Sans Pro', Arial;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+th {
+    height: 50px;
+    text-align: center;
+    background-color: #222;
+    color: white;
+}
+
+th.code,
+th.nomAirline,
+th.departTime,
+th.arriverTime,
+th.departAirport,
+th.destAirport,
+th.codeAeroport,
+th.nomAeroport,
+th.paysOrigi {
+    background-color: #b8860b;
+    color: black 1px;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+td {
+    background-color: rgb(240, 233, 143);
+    font-weight: bold;
+}
+
+select {
+    background: rgb(240, 233, 143);
+    border: 0! important;
+}
+
+.select {
+    position: relative;
+    display: block;
+    width: 20em;
+    height: 3em;
+    background: rgb(240, 233, 143);
+    overflow: hidden;
+    line-height: 3;
+    border-radius: .25em;
+    float: right;
+}
+
+select {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 0 0 .5em;
+    color: black;
+    font-size: 1em;
+    letter-spacing: .8px;
+    cursor: pointer;
+}
+
+.select::after {
+    content: '\25bc';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #34495e;
+    pointer-events: none;
+    transition: .2s all ease;
+}
+
+.select:hover::after {
+    color: #31a3e4;
+}
+
+#cinq {
+    overflow-y: scroll;
+    height: 200px;
+}
+
+div#dos {
+    float: left;
+    width: 50%;
+    display: inline;
+    margin: auto;
+}
+
+div#trois {
+    float: right;
+    width: 50%;
+    display: inline;
+    margin: auto;
+}
+
+#container {
+    overflow: hidden;
+}
+
+.pane {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: .05em;
+    border: .01em solid #444;
+    position: relative;
+    background: #222;
+    text-align: center;
+    line-height: 1;
+    font-size: 80px;
+    color: #fff;
+    font-family: monospace;
+    box-shadow: 0px .02em 0 #ccc, 0px .05em 0 #000;
+    text-shadow: -1px -2px 2px rgba(0, 0, 0, 1);
+    z-index: 50;
+}
+
+.pane:after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: "";
+    border-top: 2px solid #000;
+    border-bottom: 2px solid rgba(255, 255, 255, .3);
+    width: 100%;
+    height: 0px;
+    opacity: .8;
+    z-index: 10;
+    margin-top: -1px
+}
+
+.centrer {
+    text-align: center;
+}
