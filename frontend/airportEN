@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Airports</title>
+    <script src="js/vols.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+    <script src="js/script3.js"></script>
+    <script src="js/script4.js"></script>
+    <script src="js/script5.js"></script>
+    <link rel="stylesheet" href="css/airport.css">
+    <link rel="icon" href="img/airplane.jpg">
+    <title>AIRPORTS</title>
+</head>
+
+
+<section>
+    <div id="lang" class="select">
+    </div>
+    <div id="uno">
+        <!-- <h1 id="premier"><br>FLIGHT DISPLAYS</h1> -->
+        <h1 class="centrer">
+            <div class="pane">D</div>
+            <div class="pane">I</div>
+            <div class="pane">S</div>
+            <div class="pane">P</div>
+            <div class="pane">L</div>
+            <div class="pane">A</div>
+            <div class="pane">Y</div>
+        </h1>
+        <br><br>
+
+        <table id="toutVols">
+            <thead>
+                <th class="codeVol">Code</th>
+                <th class="nombre">Airline </th>
+                <th class="depTime">Departure time</th>
+                <th class="arrTime">Arrival time</th>
+                <th class="deptAirport">Airport of departure</th>
+                <th class="destinationAirport">Airport of destination</th>
+            </thead>
+            <tbody id="affichage">
+            </tbody>
+        </table>
+
+    </div>
+    <div id="container">
+        <div id="dos">
+            <form id="formulaireInfoVol" action=#>
+                <h1 id="second">INFORMATION FORM</h1>
+                <label for="code">Flight Code</label>
+                <input id="code" name="code" type="number" maxlength="3" placeholder="Flight Code" required><br>
+                <label for="depart">Airport of departure : </label>
+                <input id="depart" name="depart" maxlength="3" type="text" placeholder="Abreviation of the airport" required><br>
+                <label for="destination">Airport of destination : </label>
+                <input id="destination" name="destination" maxlength="3" type="text" placeholder="Abreviation of the airport" required><br>
+                <input type="submit" id="button" value="Send">
+                <input type="reset" id="efface" value="Delete Enquiry"><br>
+
+                <table><br>
+                    <thead id="requete">
+                        <th class="code">Code</th>
+                        <th class="nomAirline">Airline </th>
+                        <th class="departTime">Departure Time</th>
+                        <th class="arriverTime">Arrival Time</th>
+                        <th class="departAirport">Airport of departure</th>
+                        <th class="destAirport">Airport of destination</th>
+                    </thead>
+                    <tbody id="zoneOutput">
+                    </tbody>
+                </table>
+            </form>
+        </div><br>
+
+        <div id="trois">
+            <form id="formulaireAeroport" action=#>
+
+
+                <h1 id="troisieme">AIRPORT AVAILABILITY</h1>
+                <input id="codePays" name="codePays" type="text" maxlength="3" placeholder="Country abbreviation" required><br>
+                <input type="submit" id="button2" value="Send">
+                <input type="reset" id="efface2" value="Delete Enquiry"><br>
+
+                <table><br>
+                    <thead id="paysTh">
+                        <th class="codeAeroport">Abreviation of the airport</th>
+                        <th class="nomAeroport">Airport name </th>
+                        <th class="paysOrigi">Country of the airport</th>
+                    </thead>
+                    <tbody id="zoneOutputPays">
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div id="quatre">
+        <form id="formulaireAjout" action=#>
+            <h1 id="quatrieme">INSERTION OF AVAILABLE COMPANIES</h1>
+            <label for="nom">Code</label>
+            <input id="nom" name="nom" type="text" maxlength="3" placeholder="Company's code" required>
+            <label for="compagnie">Airline company:</label>
+            <input id="compagnie" name="compagnie" type="text" placeholder="Airline" required>
+            <input type="button" id="button3" onclick="ajout();" value="Add">
+            <input type="reset" id="efface3" value="Cancel"><br>
+        </form>
+        <table><br>
+            <tbody id="ajouterAirlines">
+            </tbody>
+            <table>
+    </div>
+
+    <div id="cinq">
+        <form id="formulaireAjoutVols" action=#>
+            <h1 id="quinto">INSERTION OF NEW FLIGHTS</h1>
+            <label for="codeVol">Flight code:</label><br>
+            <input id="codeVol" name="codeVol" type="number" min="0" max="999" step="5" placeholder="Flight code:" required>
+            <label for="airline">Airline company:</label><br>
+            <input name="airline" id="airline" type="text" placeholder="Airline" maxlength="3" required><br>
+            <label for="hdepart">Departure Time : </label><br>
+            <input id="hdepart" name="hdepart" type="datetime-local" required><br>
+            <label for="harrivee">Arrival Time :</label><br>
+            <input id="harrivee" name="harrivee" type="datetime-local" required><br>
+            <label for="adepart">Airport of departure</label><br>
+            <input id="adepart" name="adepart" type="text" maxlength="3" placeholder="Abreviation de l'aéroport" required><br>
+            <label for="aarrivee">Airport of destination </label><br>
+            <input id="aarrivee" name="aarrivee" type="text" maxlength="3" placeholder="Abreviation de l'aéroport" required><br>
+            <input type="submit" id="button4" value="Add">
+            <input type="reset" id="efface4" value="Cancel"><br>
+        </form>
+        <table><br>
+            <tbody id="ajouterVols">
+            </tbody>
+            <table>
+    </div>
+    </body>
+
+</html>
