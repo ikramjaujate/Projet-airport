@@ -41,5 +41,20 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 *	Afficher les vols disponibles.
 *	Afficher les résultats des différentes requêtes. 
 
+# Détail api rest
+
+* webservice *toutLesVols* sans paramètre, type JSON 
+* webservice *TableInfo* avec 3 paramètres (code, départ et destination), type JSON
+* webservice *Pays* avec 1 paramètre (abréviation), type RAW
+* webservice *GetLangues* sans paramètre, type JSON
+* webservice *compagnie* avec 3 paramètres (hacientos, dep et dest)
+* webservice *ajoutVols* avec 6 paramètres (code, nom, hDep, hDest, dept, dest), type JSON
+* webservice *ajout* avec 2 paramètres (id, nom), type JSON
+* webservice *page* avec 1 paramètre (url), type RAW
+* webservice *image* avec 1 paramètre (url), type RAW
+* webservice *js* avec 1 paramètre (url), type RAW
+* webservice *css* avec 1 paramètre (url), type RAW
+
+
 # Détail DB
 ![](image/tableau.png)
