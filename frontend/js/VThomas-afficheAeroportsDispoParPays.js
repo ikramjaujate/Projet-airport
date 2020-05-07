@@ -18,3 +18,5 @@ function envoie(codePays){
 function callPays(){
 	document.getElementById("zoneOutputPays").innerHTML= this.responseText;
 }
+
+//Utilise type RAW dans base de donnée
