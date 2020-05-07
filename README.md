@@ -40,4 +40,5 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 *	Changer la langue de la page.
 *	Afficher les vols disponibles.
 *	Afficher les résultats des différentes requêtes. 
-![](images/Capture Tables.png)
+
+![](Capture Tables.png)
