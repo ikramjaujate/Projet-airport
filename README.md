@@ -26,7 +26,7 @@ L'utilisateur pourra aussi rechercher la disponibilité des aéroports par pays 
 # Implémentation : approche technique
 Le travail est divisé en deux partie, la première c’est le back-end qui correspond à la création des différentes tables dans notre base de données mais aussi les procédures et les différents Web Service dont notre page aura besoin pour la réalisation des différentes tâches. De même, on aura besoin de la partie front-end qui correspond à la structure de notre page web ainsi que les différents scripts afin de mettre en forme notre page.
 
-# Partie back-end
+## Partie back-end
 1.	Une base de données qui va enregistrer des vols.
 2.	Un serveur web qui sera capable de nous fournir les pages HTML, JS et CSS, ainsi que de proposer des Web Services
 3.	Des Web Services (avec les procédures associées) :
@@ -35,7 +35,7 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
   *	Un Web Service capable d'ajouter dans la base de données différents vols ainsi que des compagnies aériennes.
   *	Un Web Service qui va pouvoir récupérer les données d’une recherche dans la base de données.
 
-# Partie front-end
+## Partie front-end
 1.	Une page Web (HTLM, JS, CSS) permettant d'appeler les webservices et de traiter les réponses, qui propose une interface utilisateur pour :
 *	Changer la langue de la page.
 *	Afficher les vols disponibles.
