@@ -46,15 +46,15 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 * webservice *toutLesVols* sans paramètre, type JSON - Julie F.
   *  Afficher la liste des vols
 * webservice *TableInfo* avec 3 paramètres (code, depart et destination), type JSON - Ikram J.O.
-`*Affiche les informations sur un vol selon son code`
+  *  Affiche les informations sur un vol selon son code
 * webservice *Pays* avec 1 paramètre (abreviation), type RAW - Thomas V.
-`*Affiche les aéroports disponible du pays`
+  *  Affiche les aéroports disponible du pays
 * webservice *getLangues* sans paramètre, type JSON - Eric S.
-`*Permet la traduction de la page via une redirection`
+  *  Permet la traduction de la page via une redirection
 * webservice *ajoutVols* avec 6 paramètres (code, nom, hDep, hDest, dept, dest), type JSON - Julie F.
-`*Permet d'ajouter un vol dans la base de données`
+  *  Permet d'ajouter un vol dans la base de données
 * webservice *ajout* avec 2 paramètres (id, nom), type JSON - Ikram J.O.
-`*Permet d'ajouter une compagnie`
+  *  Permet d'ajouter une compagnie
 * webservice *page* avec 1 paramètre (url), type RAW 
 * webservice *img* avec 1 paramètre (url), type RAW
 * webservice *js* avec 1 paramètre (url), type RAW
