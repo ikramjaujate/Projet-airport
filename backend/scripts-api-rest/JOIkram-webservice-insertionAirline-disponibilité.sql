@@ -24,4 +24,4 @@ BEGIN
         where deptAirport = depart and destAirport = destination
 END;
 
-CREATE SERVICE "ajout" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHO
+CREATE SERVICE "ajout" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call ajout(:id,:nom);
