@@ -44,7 +44,7 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 # Détail api rest
 
 * webservice *toutLesVols* sans paramètre, type JSON - Julie F.
-`*Afficher la liste des vols`
+  *Afficher la liste des vols
 * webservice *TableInfo* avec 3 paramètres (code, depart et destination), type JSON - Ikram J.O.
 `*Affiche les informations sur un vol selon son code`
 * webservice *Pays* avec 1 paramètre (abreviation), type RAW - Thomas V.
