@@ -62,4 +62,12 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 
 
 # Détail DB
+Il y a 5 tables dans la base de données :
+1. *Country* dans laquelle on retrouve l'abréviation du pays et le nom de celui-ci.
+2. *Airports* dans laquelle on retrouve l'abréviation de l'aéroport, son nom et l'id de son pays.
+3. *Flight* dans laquelle on retruove les informations dur les vols c'est-à-dire: le code du vol, l'abréviation de l'airline, l'heure de départ et celle d'arrivée ainsi que l'aéroport de départ et celui de destination.
+4. *Airline* dans laquelle on retrouve l'abréviation de l'airline et son nom complet.
+5. *Flightsinfo* dans laquelle on retrouve le code du vol, l'id de son airline et le nombre de sièges.
+6. *Langues* dans laquelle on retrouve l'id de la langue et son nom.
+
 ![](image/tableau.png)
