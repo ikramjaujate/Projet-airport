@@ -1,4 +1,4 @@
-/* auteur : HE Eric Suys */
+/* auteur : HE201869 Eric Suys */
 
 /*Procedure qui permet de selectionner la langue souhaiter et donc réaliser changement de la page*/
 
