@@ -1,15 +1,15 @@
 # Projet Aéroports
 
 # Présentation de l'équipe
-Pour la réalisation de ce projet, nous sommes un groupe de 4 personnes :
+Pour la réalisation de ce projet, nous sommes un groupe de 4 personnes de 1TM2 :
 *	Julie Fino
 *	Ikram Jaujate
 *	Thomas Vonck
 *	Eric Suys
 
-# Besoin du client
+# Description du Projet 
 Ce projet représente en page HTML les panneaux d'affichage de vols d'aéroports. L'utilisateur pourra accéder à une page web afin de voir les vols disponibles, il pourra également réaliser une requête afin de rechercher des informations sur ces vols (date départ, arrivée, aéroport de départ, aéroport de destination, nombre de sièges, ...). 
-L'utilisateur pourra aussi rechercher la disponibilité des aéroports par pays (avec possibilité de réinitialiser la requête).
+L'utilisateur pourra aussi rechercher la disponibilité des aéroports par pays (avec possibilité de réinitialiser la requête), ajouter des airlines et également ajouter des vols à la base de données via un formulaire HTML.
 
 # Fonctionnalités principales
 * Une page html comportant le panneau d’affichage des vols disponible.
