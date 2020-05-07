@@ -41,4 +41,4 @@ Le travail est divisé en deux partie, la première c’est le back-end qui corr
 *	Afficher les vols disponibles.
 *	Afficher les résultats des différentes requêtes. 
 
-![](images/tableau.png)
+![](image/tableau.png)
