@@ -1,7 +1,8 @@
-/*Thomas Vonck 1TM2*/
+/* auteur: HE201907 Thomas Vonck 1TM2*/
 
 
 /*Procedure qui permet de voir combien de aéroports il y a par pays*/
+
 ALTER PROCEDURE "DBA"."proc_Pays"( in abreviation char(3) )
 RESULT (html long varchar)
 BEGIN
