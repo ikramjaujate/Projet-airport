@@ -1,0 +1,3 @@
+-n airpot "C:\Users\promo\OneDrive\Desktop\airpot.db" /*Path faut changer !*/
+-x tcpip(port=220)
+-xs http(port=70)
