@@ -37,14 +37,14 @@ Le travail est divisé en deux partie, la première c’est le backend qui corre
   *	Un Web Service qui va pouvoir récupérer les données d’une recherche dans la base de données.
 
 ### Partie front-end
-1.	Une page Web (HTLM, JS, CSS) permettant d'appeler les webservices disponibles et de traiter les réponses afin de modifier la page / la base de donnée :
-*	Changer la langue de la page.
-*	Afficher les vols disponibles.
-*	Afficher les résultats des différentes requêtes. 
-  * Afficher les informations sur un vol.
-  * Afficher les aéroports disponibles selon le pays proposé.
-* Ajouter à notre base de donnée une nouvelle compagnie aérienne
-* Ajouter un nouveau vol à notre base de donnée.
+* Une page Web (HTLM, JS, CSS) permettant d'appeler les webservices disponibles et de traiter les réponses afin de modifier la page / la base de donnée :
+  *	Changer la langue de la page.
+  *	Afficher les vols disponibles.
+  *	Afficher les résultats des différentes requêtes. 
+    * Afficher les informations sur un vol.
+    * Afficher les aéroports disponibles selon le pays proposé.
+  * Ajouter à notre base de donnée une nouvelle compagnie aérienne
+  * Ajouter un nouveau vol à notre base de donnée.
 
 # Détail api rest
 
