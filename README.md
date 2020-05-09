@@ -20,26 +20,31 @@ L'utilisateur pourra aussi rechercher la disponibilité des aéroports par pays 
 
 * Permet d’ajouter des vols pour l’avenir.
 
-# Fonctionnalités supplémentaires
+# Fonctionnalités secondaires
 * Possibilité de changer la langue de la page. 
 
 # Implémentation : approche technique
-Le travail est divisé en deux partie, la première c’est le back-end qui correspond à la création des différentes tables dans notre base de données mais aussi les procédures et les différents Web Service dont notre page aura besoin pour la réalisation des différentes tâches. De même, on aura besoin de la partie front-end qui correspond à la structure de notre page web ainsi que les différents scripts afin de mettre en forme notre page.
+Le travail est divisé en deux partie, la première c’est le backend qui correspond à la création des différentes tables SQL dans notre base de données mais aussi les procédures et les différents Web Service dont notre page aura besoin pour la réalisation des différentes tâches. De même, on aura besoin de la partie frontend qui correspond à la structure de notre page web (HTML / CSS / JS) ainsi que les différents scripts afin de pouvoir mettre notre page en forme.
 
 ### Partie back-end
-1.	Une base de données qui va enregistrer des vols.
-2.	Un serveur web qui sera capable de nous fournir les pages HTML, JS et CSS, ainsi que de proposer des Web Services
-3.	Des Web Services (avec les procédures associées) :
+1. Une base de donnée ayant les différentes tables SQL, contenant les éléments nécessaires.
+2. Une base de données qui va enregistrer des vols.
+3.	Un serveur web qui sera capable de nous fournir les pages HTML, JS et CSS.
+4.	Des Web Services et les procédures associées pour chque un :
   *	Un Web Service capable de récupérer les vols disponibles et les placer dans l'HTML
   *	Un Web Service capable de récupérer la langue souhaitée et de pouvoir traduire la page selon celui-ci.
   *	Un Web Service capable d'ajouter dans la base de données différents vols ainsi que des compagnies aériennes.
   *	Un Web Service qui va pouvoir récupérer les données d’une recherche dans la base de données.
 
 ### Partie front-end
-1.	Une page Web (HTLM, JS, CSS) permettant d'appeler les webservices et de traiter les réponses, qui propose une interface utilisateur pour :
+1.	Une page Web (HTLM, JS, CSS) permettant d'appeler les webservices disponibles et de traiter les réponses afin de modifier la page / la base de donnée :
 *	Changer la langue de la page.
 *	Afficher les vols disponibles.
 *	Afficher les résultats des différentes requêtes. 
+  * Afficher les informations sur un vol.
+  * Afficher les aéroports disponibles selon le pays proposé.
+* Ajouter à notre base de donnée une nouvelle compagnie aérienne
+* Ajouter un nouveau vol à notre base de donnée.
 
 # Détail api rest
 
