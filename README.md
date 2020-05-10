@@ -81,16 +81,16 @@ Le travail est divisé en deux partie, la première c’est le backend qui corre
 # Détail DB
 Il y a 5 tables dans la base de données :
 1. *Country* dans laquelle on retrouve l'abréviation du pays et le nom de celui-ci.
-  * 2 valeurs : abreviationPays | nom
+     * 2 valeurs : abreviationPays | nom
 2. *Airports* dans laquelle on retrouve l'abréviation de l'aéroport, son nom et l'id de son pays.
-  * 3 valeurs : abreviationAéroport | nom | id
+     * 3 valeurs : abreviationAéroport | nom | id
 3. *Flight* dans laquelle on retruove les informations dur les vols c'est-à-dire: le code du vol, l'abréviation de l'airline, l'heure de départ et celle d'arrivée ainsi que l'aéroport de départ et celui de destination.
-  * 6 valeurs : codeVol | abreviationAirline | heureDepart | heureArrivée | aeroportDépart | aéroportArrivée
+     * 6 valeurs : codeVol | abreviationAirline | heureDepart | heureArrivée | aeroportDépart | aéroportArrivée
 4. *Airline* dans laquelle on retrouve l'abréviation de l'airline et son nom complet.
-  * 2 valeurs : abreviationAirlines | nom
+     * 2 valeurs : abreviationAirlines | nom
 5. *Flightsinfo* dans laquelle on retrouve le code du vol, l'id de son airline et le nombre de sièges.
-  * 2 valeurs : codeVol | idAirlines | nombreSieges
+     * 2 valeurs : codeVol | idAirlines | nombreSieges
 6. *Langues* dans laquelle on retrouve l'id de la langue et son nom.
-  * 2 valeurs : idLangue | nomLangue
+     * 2 valeurs : idLangue | nomLangue
 
 ![](image/tableau.png)
