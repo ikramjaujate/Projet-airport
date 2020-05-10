@@ -7,7 +7,7 @@ Pour la réalisation de ce projet, nous sommes un groupe de 4 personnes de 1TM2 
 *	Thomas Vonck
 *	Eric Suys
 
-# Description du Projet 
+# Description du projet 
 Ce projet représente en page HTML les panneaux d'affichage de vols d'aéroports. L'utilisateur pourra accéder à une page web afin de voir les vols disponibles, il pourra également réaliser une requête afin de rechercher des informations sur ces vols (date départ, arrivée, aéroport de départ, aéroport de destination, nombre de sièges, ...). 
 L'utilisateur pourra aussi rechercher la disponibilité des aéroports par pays (avec possibilité de réinitialiser la requête), ajouter des airlines et également ajouter des vols à la base de données via un formulaire HTML.
 
@@ -107,5 +107,6 @@ Il y a 5 tables dans la base de données :
        
 6. *Langues* dans laquelle on retrouve l'id de la langue et son nom.
      * 2 valeurs : idLangue | nomLangue
+       * Elle a une PK qui est l'id de la langue
 
 ![](image/tableau.png)
