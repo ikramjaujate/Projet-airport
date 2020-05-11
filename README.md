@@ -11,6 +11,8 @@ Pour la réalisation de ce projet, nous sommes un groupe de 4 personnes de 1TM2 
 Ce projet représente en page HTML les panneaux d'affichage de vols d'aéroports. L'utilisateur pourra accéder à une page web afin de voir les vols disponibles, il pourra également réaliser une requête afin de rechercher des informations sur ces vols (date départ, arrivée, aéroport de départ, aéroport de destination, nombre de sièges, ...). 
 L'utilisateur pourra aussi rechercher la disponibilité des aéroports par pays (avec possibilité de réinitialiser la requête), ajouter des airlines et également ajouter des vols à la base de données via un formulaire HTML.
 
+# Besoin du client
+Ce projet propose la possibilité au client de réaliser des recherches concernant les différents vols, ainsi que des informations sur ces derniers.Il peut aussi avoir des informations concernant les aéroports et leusr disponibilité. Il aura aussi la possibilité d'ajouter des vols s'il le souhaite et des nouvelles compagnies aériennes.
 # Fonctionnalités principales
 * Une page html comportant le panneau d’affichage des vols disponible.
 
