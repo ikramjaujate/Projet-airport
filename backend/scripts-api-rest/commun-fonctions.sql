@@ -10,14 +10,14 @@ BEGIN
        RETURN code;
 END;
 
-CREATE FUNCTION "DBA"."getAirportEtPays"(in abreviation char(3) ) // Reçoit en parametre l'abreviation du nom de l'aeroport
+CREATE FUNCTION "DBA"."getAirportEtPays"(in abreviation char(3) ) /*Reçoit en parametre l'abreviation du nom de l'aeroport*/
 RETURNS LONG VARCHAR
 DETERMINISTIC
 BEGIN
 	DECLARE nomPays CHAR(50); //declaration de variable
 	SET nomPays = (
-                SELECT DBA.Country.name from Country join Airports //Renvoi pays de l'aeroport
-                    where DBA.Airports.idAirport = abreviation //depend de abreviation
+                SELECT DBA.Country.name from Country join Airports /*Renvoi pays de l'aeroport*/
+                    where DBA.Airports.idAirport = abreviation /*depend de abreviation*/
             );
 	RETURN nomPays; //Retourne la réponse
 END;
