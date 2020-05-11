@@ -19,10 +19,12 @@ CREATE SERVICE "ajout" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS '
 CREATE PROCEDURE "DBA"."proc_TableInfo"( codeVol INTEGER ,depart char(3), destination char(3) )
 RESULT (idCode INTEGER, name char(50), deptTime char(10),arrTime char(10), deptAirport char(50), destAirport char(50))
 BEGIN
-    Call sa_set_http_header('Access-Control-Allow-Origin', '*');
-	select DBA.Flight.idCode, DBA.Airline.name, DBA.Flight.deptTime, DBA.Flight.arrTime, getNomAirport(depart), getNomAirport(destination)
-        from DBA.Flight join Airline on Flight.idAirline = Airline.idAirline join Airports on DBA.Flight.deptAirport = idAirport
+     Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+select DBA.Flight.idCode, DBA.Airline.name as nom, DBA.Flight.deptTime, DBA.Flight.arrTime, getNomAirport(depart), getNomAirport(destination)
+        from DBA.Flight join Airline on Flight.idAirline = Airline.idAirline join Airports on DBA.Flight.deptAirport = Airports.idAirport
         where deptAirport = depart and destAirport = destination
+
+        group by idCode, nom,deptTime, arrTime
 END;
 
 CREATE SERVICE "TableInfo" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_TableInfo(:code,:depart,:destination);
